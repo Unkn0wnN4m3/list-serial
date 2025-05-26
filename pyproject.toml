@@ -1,7 +1,7 @@
 [project]
 name = "listserial"
-version = "0.2.3"
-description = "Add your description here"
+version = "0.2.4"
+description = "Module to list the available serial ports on the system, showing their name and description."
 readme = "README.md"
 authors = [
     { name = "Unkn0wnN4m3", email = "87839850+Unkn0wnN4m3@users.noreply.github.com" }
