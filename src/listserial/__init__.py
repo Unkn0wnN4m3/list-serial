@@ -1,6 +1,3 @@
-# inspired by
-# https://stackoverflow.com/questions/12090503/listing-available-com-ports-with-python?__cf_chl_tk=sRttuoRZRJoPKNFlEp3L6qAr_Y6WXl8KGTsQkzg4vdo-1748131557-1.0.1.1-CGa.p9qYeX3r45SujttJU20sGGU5PTK0X7gfwXiGMIs
-
 import sys
 
 import serial
