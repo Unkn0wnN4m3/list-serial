@@ -1,14 +1,28 @@
+import serial
+
+
 def serial_ports() -> list[tuple[str, str]]:
-    """Lists serial port names with descriptions
+    """Lists available and accessible serial ports with descriptions
 
     :raises EnvironmentError:
         On unsupported or unknown platforms
     :returns:
-        A list of tuples (port_name, description) of the serial ports available on the system
+        A list of tuples (port_name, description) of the serial ports that can be opened on the system
     """
     from serial.tools import list_ports
 
-    return [(port.device, port.description) for port in list_ports.comports()]
+    ports = list(list_ports.comports())
+    result: list[tuple[str, str]] = []
+
+    # Filter to only include ports we can open
+    for port in ports:
+        try:
+            s = serial.Serial(port.device)
+            s.close()
+            result.append((port.device, port.description))
+        except (OSError, serial.SerialException):
+            pass
+    return result
 
 
 def main() -> None:
