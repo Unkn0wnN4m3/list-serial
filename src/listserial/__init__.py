@@ -50,10 +50,10 @@ def main() -> None:
     if not ports:
         print("No serial port is being used")
     else:
-        print("Serial ports:\n")
+        print("Available serial ports:\n")
 
         for port, description in ports:
-            port_info = f"- {port}"
+            port_info = f"{port}"
             if description:
-                port_info += f" ({description})"
-            print("\t" + port_info)
+                port_info += f" - {description}"
+            print("* " + port_info)
