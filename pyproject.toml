@@ -1,6 +1,6 @@
 [project]
 name = "listserial"
-version = "0.2.8"
+version = "0.2.9"
 description = "Module to list the available serial ports on the system, showing their name and description."
 readme = "README.md"
 authors = [

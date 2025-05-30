@@ -1,47 +1,51 @@
 # ListSerial
 
-ListSerial es una utilidad en Python para listar los puertos seriales disponibles en el sistema, mostrando su nombre y descripción (cuando está disponible).
+ListSerial is a Python utility for listing available serial ports on the
+system, showing their name and description (when available).
 
-## Instalación
+## Installation
 
-1. Clona este repositorio o descarga los archivos.
-2. Instala las dependencias necesarias ejecutando:
+1. Clone this repository or download the files.
+2. Change to the newly created repository.
+3. Install the program and required dependencies by running:
 
-```bash
-# UV tool is required
-$ uv tool install -U .
-```
-
-## Uso
-
-Puedes ejecutar el script principal para mostrar los puertos seriales disponibles:
+> [!IMPORTANT]
+> uv tool is required
 
 ```bash
-$ listserial
+uv tool install -U .
 ```
 
-La salida mostrará una lista de puertos seriales detectados, por ejemplo:
+## Usage
 
+You can run the main script to display available serial ports:
+
+```bash
+listserial
 ```
+
+The output will show a list of detected serial ports, for example:
+
+```text
 Available serial ports:
 
 * COM3 - USB Serial Device
 * COM4 - Arduino Uno
 ```
 
-Si no hay puertos disponibles, verás:
+If no ports are available, you will see:
 
-```
+```text
 No serial port is being used
 ```
 
-## Compatibilidad
+## Compatibility
 
 - Windows
 - Linux
-- macOS
+- MacOS
 
-## Créditos
+## Credits
 
-Inspirado por:  
+Inspired by:  
 <https://stackoverflow.com/questions/12090503/listing-available-com-ports-with-python>
