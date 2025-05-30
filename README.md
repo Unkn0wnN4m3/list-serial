@@ -10,7 +10,7 @@ system, showing their name and description (when available).
 3. Install the program and required dependencies by running:
 
 > [!IMPORTANT]
-> uv tool is required
+> [uv](https://docs.astral.sh/uv/getting-started/installation/) is required
 
 ```bash
 uv tool install -U .
