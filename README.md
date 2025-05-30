@@ -6,7 +6,7 @@ system, showing their name and description (when available).
 ## Installation
 
 1. Clone this repository or download the files.
-2. Change to the cloned repository.
+2. Change directory to the cloned repository.
 3. Install the program and required dependencies by running:
 
 > [!IMPORTANT]
