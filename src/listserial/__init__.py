@@ -17,7 +17,7 @@ def serial_ports() -> list[tuple[str, str]]:
     # Filter to only include ports we can open
     for port in ports:
         try:
-            s = serial.Serial(port.device)
+            s = serial.Serial(port.device, timeout=1)
             s.close()
             result.append((port.device, port.description))
         except (OSError, serial.SerialException):
