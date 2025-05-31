@@ -20,8 +20,8 @@ def serial_ports() -> list[tuple[str, str]]:
             s = serial.Serial(port.device)
             s.close()
             result.append((port.device, port.description))
-        except (OSError, serial.SerialException) as e:
-            print(f"Warning: Could not open port {port.device}: {e}")
+        except (OSError, serial.SerialException):
+            print(f"Port {port.device} not available")
     return result
 
 
