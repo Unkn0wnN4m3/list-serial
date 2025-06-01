@@ -51,7 +51,7 @@ def test_serial_ports_some_unavailable(mock_serial, mock_list_ports, mock_compor
     mock_list_ports.return_value = mock_comports
 
     # Make second port unavailable
-    def side_effect(port):
+    def side_effect(port, **kwargs):
         if port == "/dev/ttyS1":
             raise serial.SerialException("Access denied")
         return Mock()
