@@ -33,7 +33,7 @@ def main() -> None:
         print("Available serial ports:\n")
 
         for port, description in ports:
-            port_info = f"{port}"
+            port_info = f"* {port}"
             if description:
                 port_info += f" - {description}"
-            print("* " + port_info)
+            print(port_info)
