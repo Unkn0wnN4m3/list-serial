@@ -21,7 +21,7 @@ def serial_ports() -> list[tuple[str, str]]:
             s.close()
             result.append((port.device, port.description))
         except (OSError, serial.SerialException):
-            print(f"Port {port.device} not available")
+            pass
     return result
 
 
