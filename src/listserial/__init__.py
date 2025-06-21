@@ -1,4 +1,5 @@
 import serial
+from serial.tools import list_ports
 
 
 def serial_ports() -> list[tuple[str, str]]:
@@ -9,8 +10,6 @@ def serial_ports() -> list[tuple[str, str]]:
     :returns:
         A list of tuples (port_name, description) of the serial ports that can be opened on the system
     """
-    from serial.tools import list_ports
-
     ports = list(list_ports.comports())
     result: list[tuple[str, str]] = []
 
