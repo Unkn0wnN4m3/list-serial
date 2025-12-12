@@ -1,30 +1,29 @@
 # ListSerial
 
-ListSerial is a Python utility for listing available serial ports on the
-system, showing their name and description (when available).
+A simple Python CLI utility to list available serial ports on your system with their names and descriptions.
+
+## Requirements
+
+- Python >= 3.9
+- [uv](https://docs.astral.sh/uv/getting-started/installation/) package manager
 
 ## Installation
 
-1. Clone this repository or download the files.
-2. Change directory to the cloned repository.
-3. Install the program and required dependencies by running:
-
-> [!IMPORTANT]
-> [uv](https://docs.astral.sh/uv/getting-started/installation/) is required
-
 ```bash
-uv tool install -U .
+git clone <repository-url>
+cd list-serial
+uv tool install .
 ```
 
 ## Usage
 
-You can run the main script to display available serial ports:
+Simply run:
 
 ```bash
 listserial
 ```
 
-The output will show a list of detected serial ports, for example:
+**Example output:**
 
 ```text
 Available serial ports:
@@ -33,17 +32,31 @@ Available serial ports:
 * COM4 - Arduino Uno
 ```
 
-If no ports are available, you will see:
+If no ports are detected:
 
 ```text
 No serial port is being used
+```
+
+## Development
+
+Install with development dependencies:
+
+```bash
+uv sync --dev
+```
+
+Run tests:
+
+```bash
+uv run pytest
 ```
 
 ## Compatibility
 
 - Windows
 - Linux
-- MacOS
+- macOS
 
 ## Credits
 
