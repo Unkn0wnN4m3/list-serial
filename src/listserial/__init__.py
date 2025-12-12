@@ -28,12 +28,19 @@ def serial_ports(
     result: list[tuple[str, str]] = []
 
     for port in ports:
+        # PySerial returns None for ports without metadata (e.g., some USB adapters)
+        # Normalize to empty string to maintain consistent type and avoid errors in client code
         description = port.description if port.description is not None else ""
         
         if verify_access:
+            # Opening the port is the only reliable way to verify actual accessibility
+            # The system may list ports that are locked by other processes (Arduino IDE, minicom, etc.)
+            # or require special permissions (e.g., not being in dialout group on Linux)
             try:
                 with serial.Serial(port.device, timeout=timeout):
                     result.append((port.device, description))
+            # OSError captures permission/device issues, SerialException captures port-specific errors
+            # We separate both because they require different solutions (permissions vs hardware)
             except (OSError, serial.SerialException) as e:
                 logger.debug(
                     f"Port {port.device} is not accessible: {type(e).__name__}: {e}"
